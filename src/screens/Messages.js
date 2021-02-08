@@ -30,7 +30,7 @@ export default function Messages({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Header text="Menssagens" />
+      <Header text="Messages" />
 
       {true ? (
         <>
@@ -74,9 +74,9 @@ export default function Messages({ navigation }) {
               uri: "https://img.icons8.com/bubbles/200/000000/myspace.png",
             }}
           />
-          <Text style={styles.title}>Sem novas menssagens :(</Text>
+          <Text style={styles.title}>No new messages :(</Text>
           <Text style={styles.sub}>
-            Adicione novos amigos para bater um papo legal!
+          Add new friends to have a nice chat !
           </Text>
         </View>
       )}

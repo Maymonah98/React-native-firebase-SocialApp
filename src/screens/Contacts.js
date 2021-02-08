@@ -184,7 +184,7 @@ const screens = () => {
 
   return (
     <View>
-      <Header text="Contatos" />
+      <Header text="Contacts" />
       <FlatList
         data={users}
         showsVerticalScrollIndicator

@@ -45,7 +45,7 @@ export default function Message({ navigation, route }) {
           arrowColor="#FFF"
         />
         <GiftedChat
-          placeholder="Digite aqui..."
+          placeholder="type here..."
           messages={messages}
           user={user()}
           onSend={(text) => sendMessage(text)}

@@ -87,7 +87,7 @@ export default function Profile() {
             )}
           </TouchableOpacity>
         </View>
-        <Text style={styles.name}>Name: {userName}</Text>
+        <Text style={styles.name}>{userName}</Text>
       </View>
 
       <View style={styles.statusContainer}>
@@ -101,13 +101,13 @@ export default function Profile() {
           <Text style={styles.statAmount}>
             {infos?.folloers ? infos?.folloers : 0}
           </Text>
-          <Text style={styles.statTitle}>seguidores</Text>
+          <Text style={styles.statTitle}>followers</Text>
         </View>
         <View style={styles.status}>
           <Text style={styles.statAmount}>
             {infos?.following ? infos?.folowing : 0}
           </Text>
-          <Text style={styles.statTitle}>seguindo</Text>
+          <Text style={styles.statTitle}>following</Text>
         </View>
       </View>
       <FlatList
@@ -136,12 +136,12 @@ export default function Profile() {
                 alignItems: "center",
               }}
             >
-              <Text>Que tal postar algumas fotos ?</Text>
+              <Text>How about posting some pictures ?</Text>
             </View>
           );
         }}
       />
-      <Button title="sair" onPress={() => Fire.shared.singOut()} />
+      <Button title="sign out" onPress={() => Fire.shared.singOut()} />
     </ScrollView>
   );
 }

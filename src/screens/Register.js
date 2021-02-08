@@ -82,14 +82,14 @@ export default function Register() {
         >
           <Ionicons name="ios-arrow-round-back" size={32} color="#FFF" />
         </TouchableOpacity>
-        <Text style={styles.greeting}>{`Olá !\nCadastre-se para iniciar`}</Text>
+        <Text style={styles.greeting}>{`Hello !\nSign up to start`}</Text>
 
         <View style={styles.errorMessage}>
           {error && <Text style={styles.error}>{error}</Text>}
         </View>
         <View style={styles.form}>
           <View>
-            <Text style={styles.inputTitle}>Nome</Text>
+            <Text style={styles.inputTitle}>Name</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="words"
@@ -109,7 +109,7 @@ export default function Register() {
           </View>
 
           <View style={{ marginTop: 32 }}>
-            <Text style={styles.inputTitle}>Senha</Text>
+            <Text style={styles.inputTitle}>Password</Text>
             <TextInput
               style={styles.input}
               secureTextEntry
@@ -124,13 +124,13 @@ export default function Register() {
           {loading ? (
             <ActivityIndicator size="small" color="#FFF" />
           ) : (
-            <Text style={{ color: "#FFF", fontWeight: "500" }}>Entrar</Text>
+            <Text style={{ color: "#FFF", fontWeight: "500" }}>Enter</Text>
           )}
         </TouchableOpacity>
 
         <TouchableOpacity style={{ alignSelf: "center", marginTop: 32 }}>
           <Text style={{ color: "#414959", fontSize: 13 }}>
-            Ja tem uma conta?{" "}
+          Already have an account?{" "}
             <Text
               onPress={() => navigation.navigate("login")}
               style={{ fontWeight: "500", color: "#E9446A" }}

@@ -40,7 +40,7 @@ export default function Post() {
       const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
 
       if (status != "granted") {
-        Alert.alert("Erro", "Nos precisamos do acessoa sua camera para isso");
+        Alert.alert("Error", "We need access to your camera for this");
       }
     }
   }
@@ -104,7 +104,7 @@ export default function Post() {
         />
         <TextInput
           autoFocus
-          placeholder="Deseja compartilhar algo?"
+          placeholder="Want to share something?"
           value={text}
           onChangeText={setText}
           style={{ paddingHorizontal: 10 }}

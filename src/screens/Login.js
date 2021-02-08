@@ -54,7 +54,7 @@ export default function Login() {
 
         <Text
           style={styles.greeting}
-        >{`Olá de novo.\nBem vindo de volta`}</Text>
+        >{`Welcome Again`}</Text>
 
         <View style={styles.errorMessage}>
           {error && <Text style={styles.errorText}>{error}</Text>}
@@ -72,7 +72,7 @@ export default function Login() {
           </View>
 
           <View style={{ marginTop: 32 }}>
-            <Text style={styles.inputTitle}>Senha</Text>
+            <Text style={styles.inputTitle}>Password</Text>
             <TextInput
               style={styles.input}
               secureTextEntry
@@ -90,19 +90,19 @@ export default function Login() {
             <Text
               style={{ color: "#FFF", fontWeight: "500", fontWeight: "bold" }}
             >
-              Entrar
+              Enter
             </Text>
           )}
         </TouchableOpacity>
 
         <TouchableOpacity style={{ alignSelf: "center", marginTop: 32 }}>
           <Text style={{ color: "#414959", fontSize: 13 }}>
-            Novo aqui?{" "}
+            New here?{" "}
             <Text
               onPress={() => navigation.navigate("register")}
               style={{ fontWeight: "500", color: "#E9446A" }}
             >
-              cadastre
+              Register
             </Text>
           </Text>
         </TouchableOpacity>
