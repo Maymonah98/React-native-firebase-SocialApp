@@ -62,7 +62,7 @@ export default function Home() {
             }}
           />
           <Text style={{ fontSize: 20, fontWeight: "500", color: "#33333350" }}>
-            Estamos sem post para mostrar :(
+          We have no post to show :(
           </Text>
         </View>
       ) : (

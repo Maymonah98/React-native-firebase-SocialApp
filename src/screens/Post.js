@@ -61,7 +61,7 @@ export default function Post() {
         navigation.goBack();
       })
       .catch((err) => {
-        Alert.alert("erro", JSON.stringify(err));
+        Alert.alert("error", JSON.stringify(err));
       });
   }
 
