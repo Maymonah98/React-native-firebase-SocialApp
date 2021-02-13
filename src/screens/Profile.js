@@ -8,12 +8,9 @@ import {
   StyleSheet,
   FlatList,
   ScrollView,
-  TouchableOpacity,
-  ActivityIndicator,
 } from "react-native";
 
 import { AdMobRewarded } from "expo-ads-admob";
-import { FontAwesome5 } from "@expo/vector-icons";
 import getImage from "../utils/getImageAdorable";
 
 import * as firebase from "firebase";
@@ -52,42 +49,22 @@ export default function Profile() {
     setLoading(false);
   }, [avatarUrl]);
 
-  async function refreshAvatar() {
-    if (loading) {
-      return setLoading(false);
-    }
-    setLoading(true);
-
-    setAvatarUrl(getImage());
-    Fire.shared.userData
-      .updateProfile({
-        photoURL: avatarUrl,
-      })
-      .then(() => console.log("atualizado"));
-    test();
-  }
-
+  
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ justifyContent: "center", alignItems: "center" }}
+      contentContainerStyle={{ justifyContent: "center",  }}
       style={styles.container}
     >
-      <View style={{ marginTop: 32, alignItems: "center" }}>
+      <View style={{ marginTop: 32, alignItems: "flex-start" , flexDirection : "row" ,padding: 20 }}>
         <View style={styles.avatarContainer}>
           <Image style={styles.avatar} source={{ uri: avatarUrl }} />
-          <TouchableOpacity
-            style={styles.tradeIcon}
-            onPress={() => refreshAvatar()}
-          >
-            {loading ? (
-              <ActivityIndicator size="small" color="#FFF" />
-            ) : (
-              <FontAwesome5 name="exchange-alt" size={22} color="#FFF" />
-            )}
-          </TouchableOpacity>
         </View>
+        <View style={{flex:1}}>
         <Text style={styles.name}>{userName}</Text>
+        <Text style={styles.name}>0555555</Text>
+        <Button title="sign out" onPress={() => Fire.shared.singOut()} />
+        </View>
       </View>
 
       <View style={styles.statusContainer}>
@@ -114,6 +91,7 @@ export default function Profile() {
         style={styles.containerPosts}
         data={data}
         renderItem={({ item }) => {
+          item = false
           return item ? (
             <View
               key={item.id}
@@ -141,7 +119,6 @@ export default function Profile() {
           );
         }}
       />
-      <Button title="sign out" onPress={() => Fire.shared.singOut()} />
     </ScrollView>
   );
 }
@@ -156,7 +133,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     borderWidth: 4,
     borderRadius: 136 / 2,
-    borderColor: "#37373799",
+    borderColor: "white",
   },
   containerPosts: {
     width: "95%",
@@ -167,30 +144,22 @@ const styles = StyleSheet.create({
   },
 
   avatar: {
-    width: 136,
-    height: 136,
-    borderRadius: 136 / 2,
+    width: 100,
+    height: 100,
+    borderRadius: 100 / 2,
   },
-  tradeIcon: {
-    position: "absolute",
-    right: 0,
-    bottom: 0,
-    width: 40,
-    height: 40,
-    borderRadius: 40 / 2,
-    backgroundColor: "#4278ff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+
   name: {
-    marginTop: 24,
+    marginTop: 14,
+    paddingLeft: 20,
     fontSize: 16,
     fontWeight: "bold",
   },
   statusContainer: {
+    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    margin: 32,
+    margin: 18,
   },
   status: {
     alignItems: "center",
@@ -202,7 +171,7 @@ const styles = StyleSheet.create({
     fontWeight: "300",
   },
   statTitle: {
-    color: "#C3c5cd",
+    color: "darkgrey",
     fontSize: 12,
     fontWeight: "bold",
     marginTop: 4,
