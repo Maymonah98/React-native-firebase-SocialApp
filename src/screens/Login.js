@@ -42,15 +42,11 @@ export default function Login() {
     <View style={styles.container}>
       <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       <View style={{ width: "100%", height: "auto" }}>
-        <Image
-          source={require("../../assets/authHeader.png")}
-          style={styles.imageHeaer}
-        />
 
-        <Image
+        {/* <Image
           source={require("../../assets/loginLogo.png")}
           style={{ alignSelf: "center", marginTop: 44 }}
-        />
+        /> */}
 
         <Text
           style={styles.greeting}
@@ -61,8 +57,17 @@ export default function Login() {
         </View>
 
         <View style={styles.form}>
-          <View>
+          {/* <View>
             <Text style={styles.inputTitle}>Email</Text>
+            <TextInput
+              style={styles.input}
+              autoCapitalize="none"
+              value={email}
+              onChangeText={setEmail}
+            />
+          </View> */}
+          <View>
+            <Text style={styles.inputTitle}>User Name</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="none"
@@ -107,10 +112,10 @@ export default function Login() {
           </Text>
         </TouchableOpacity>
       </View>
-      <Image
+      {/* <Image
         source={require("../../assets/authHeader.png")}
         style={styles.imageFooter}
-      />
+      /> */}
     </View>
   );
 }

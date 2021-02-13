@@ -60,16 +60,6 @@ export default function Register() {
 
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../../assets/authHeader.png")}
-        style={{
-          position: "absolute",
-          top: -100,
-          right: -150,
-          width: 500,
-          height: 320,
-        }}
-      />
       <View
         style={{
           width: "100%",
@@ -89,7 +79,7 @@ export default function Register() {
         </View>
         <View style={styles.form}>
           <View>
-            <Text style={styles.inputTitle}>Name</Text>
+            <Text style={styles.inputTitle}>User Name</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="words"
@@ -100,6 +90,15 @@ export default function Register() {
 
           <View style={{ marginTop: 32 }}>
             <Text style={styles.inputTitle}>Email</Text>
+            <TextInput
+              style={styles.input}
+              autoCapitalize="none"
+              value={email}
+              onChangeText={setEmail}
+            />
+          </View>
+          <View style={{ marginTop: 32 }}>
+            <Text style={styles.inputTitle}>Mobile number</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="none"
@@ -140,7 +139,7 @@ export default function Register() {
           </Text>
         </TouchableOpacity>
       </View>
-      <Image
+      {/* <Image
         source={require("../../assets/authHeader.png")}
         style={{
           position: "absolute",
@@ -151,7 +150,7 @@ export default function Register() {
           height: 320,
           zIndex: -5,
         }}
-      />
+      /> */}
     </View>
   );
 }
