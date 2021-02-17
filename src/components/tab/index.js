@@ -16,11 +16,12 @@ export default function AppTab() {
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        activeTintColor: "#161F3D",
+        activeTintColor: "#d19677",
         inactiveTintColor: "#B8BBc4",
         showLabel: false,
         style: {
-          height: 65,
+          height: 80,
+          backgroundColor: "#344960",
         },
       }}
     >
@@ -56,7 +57,7 @@ export default function AppTab() {
           tabBarIcon: ({ color }) => (
             <Ionicons
               name="ios-add-circle"
-              color={"#E9446A"}
+              color={"#B8BBc4"}
               size={48}
               
             />

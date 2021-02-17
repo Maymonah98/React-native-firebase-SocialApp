@@ -48,7 +48,7 @@ export default function Home() {
         <TouchableOpacity
           style={{ height: 35, width: 35, borderRadius: 35 / 2 }}
         >
-          <Ionicons name="ios-person-add" size={26} color="#333333" />
+          <Ionicons name="ios-person-add" size={26} color="#B8BBc4" />
         </TouchableOpacity>
       </View>
       {hidden ? (
@@ -138,12 +138,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "space-between",
+    backgroundColor : "#e3dad0",
   },
   header: {
     width: "100%",
     paddingTop: 34,
     paddingBottom: 16,
-    backgroundColor: "#FFF",
+    backgroundColor: "#344960",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -159,6 +160,7 @@ const styles = StyleSheet.create({
   textHeader: {
     fontSize: 22,
     fontWeight: "bold",
+    color : "#b18265"
   },
   feed: {
     marginHorizontal: 16,
@@ -169,6 +171,7 @@ const styles = StyleSheet.create({
     padding: 8,
     flexDirection: "row",
     marginVertical: 8,
+    backgroundColor : "#e3dad0",
   },
   avatar: {
     width: 36,
@@ -179,7 +182,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 15,
     fontWeight: "bold",
-    color: "#454D65",
+    color: "#344960",
   },
   timestamp: {
     fontSize: 11,
@@ -189,7 +192,7 @@ const styles = StyleSheet.create({
   post: {
     marginTop: 16,
     fontSize: 14,
-    color: "#838899",
+    color: "#000000",
   },
   postImage: {
     width: "auto",
