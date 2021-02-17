@@ -112,10 +112,6 @@ export default function Login() {
           </Text>
         </TouchableOpacity>
       </View>
-      {/* <Image
-        source={require("../../assets/authHeader.png")}
-        style={styles.imageFooter}
-      /> */}
     </View>
   );
 }

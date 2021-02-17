@@ -132,25 +132,13 @@ export default function Register() {
           Already have an account?{" "}
             <Text
               onPress={() => navigation.navigate("login")}
-              style={{ fontWeight: "500", color: "#E9446A" }}
+              style={{ fontWeight: "500", color: "#d19677" }}
             >
               Login
             </Text>
           </Text>
         </TouchableOpacity>
       </View>
-      {/* <Image
-        source={require("../../assets/authHeader.png")}
-        style={{
-          position: "absolute",
-          bottom: -200,
-          right: -50,
-          opacity: 0.4,
-          width: 500,
-          height: 320,
-          zIndex: -5,
-        }}
-      /> */}
     </View>
   );
 }
@@ -160,12 +148,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor : "#e3dad0",
   },
   greeting: {
     marginTop: 32,
     fontSize: 18,
     fontWeight: "bold",
     textAlign: "center",
+    color : "#b5846a",
   },
   errorMessage: {
     height: 72,
@@ -184,7 +174,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   inputTitle: {
-    color: "#8A8F9E",
+    color: "#344960",
     fontSize: 10,
     textTransform: "uppercase",
   },
@@ -197,7 +187,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginHorizontal: 30,
-    backgroundColor: "#E9446A",
+    backgroundColor: "#344960",
     borderRadius: 4,
     height: 52,
     alignItems: "center",
