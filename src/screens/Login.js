@@ -43,10 +43,10 @@ export default function Login() {
       <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       <View style={{ width: "100%", height: "auto" }}>
 
-        {/* <Image
+        <Image
           source={require("../../assets/loginLogo.png")}
-          style={{ alignSelf: "center", marginTop: 44 }}
-        /> */}
+          style={{ alignSelf: "center" , height: 200 , width : 200,}}
+        />
 
         <Text
           style={styles.greeting}
@@ -105,7 +105,7 @@ export default function Login() {
             New here?{" "}
             <Text
               onPress={() => navigation.navigate("register")}
-              style={{ fontWeight: "500", color: "#E9446A" }}
+              style={{ fontWeight: "500", color: "#d19677" }}
             >
               Register
             </Text>
@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor : "#e3dad0",
   },
   imageHeaer: {
     position: "absolute",
@@ -147,6 +148,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     zIndex: 5,
+    color : "#b5846a",
   },
   errorMessage: {
     height: 72,
@@ -165,7 +167,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   inputTitle: {
-    color: "#8A8F9E",
+    color: "#344960",
     fontSize: 10,
     textTransform: "uppercase",
   },
@@ -178,7 +180,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginHorizontal: 30,
-    backgroundColor: "#E9446A",
+    backgroundColor: "#344960",
     borderRadius: 4,
     height: 52,
     alignItems: "center",
