@@ -94,14 +94,21 @@ export default function Home() {
                     <Ionicons name="ios-more" size={24} color="#73788B" />
                   </View>
 
-                  <Text style={styles.post}>{item.url}</Text>
                   <Image
                     source={{ uri: item.avatar_url }}
                     resizeMode="cover"
                     style={styles.postImage}
                   />
+                  <View style={{flexDirection: "row",justifyContent:"space-between"}}>
+                    <Text style={{fontSize:20,fontWeight:"600",color:"#344960"}}>Name of item </Text>
+                    <Text style={{fontSize:20,color:"#344960"}}>55 SAR</Text>
+                  </View>
 
-                  <View style={{ flexDirection: "row" }}>
+                  <Text style={{color:"#344960"}}>for <Text style={{fontWeight:"bold",color:"grey"}}> Rent </Text></Text>
+                  <Text>Description</Text>
+
+
+                  <View style={{ flexDirection: "row" ,paddingTop:10}}>
                     <TouchableOpacity onPress={() => like(item)}>
                       <Ionicons
                         name={likeIcon}
