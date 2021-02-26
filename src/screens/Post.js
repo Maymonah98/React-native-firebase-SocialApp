@@ -4,6 +4,7 @@ import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
+import {Picker} from '@react-native-picker/picker';
 
 import "firebase/firestore";
 
@@ -21,6 +22,7 @@ import {
   TouchableOpacity,
 //  Picker
 } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function Post() {
   const [text, setText] = useState("");
@@ -36,6 +38,10 @@ export default function Post() {
     setPhotoUrl(Fire.shared.userData.photoURL);
   }, []);
 
+
+  // state = {
+  //   language: 'java',
+  // };  
   async function getPhotoPermissions() {
     if (Constants.platform.android) {
       const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
@@ -96,6 +102,7 @@ export default function Post() {
         </TouchableOpacity>
       </View>
 
+      <ScrollView>
       <View style={styles.inputContainer}>
 
         <View>
@@ -121,7 +128,7 @@ export default function Post() {
             />
           </View>
           <View>
-            <Text style={styles.inputTitle}>description</Text>
+            <Text style={styles.inputTitle }>description</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="none"
@@ -130,6 +137,24 @@ export default function Post() {
               value={text}
               onChangeText={setText}
             />
+          </View>
+
+          <View>
+           <Text  style={styles.inputTitle} >Offered for</Text> 
+           <Picker
+            // selectedValue={this.state.language}
+           style={{borderBottomWidth: StyleSheet.hairlineWidth,
+                   borderTopWidth: StyleSheet.hairlineWidth,
+                   marginTop:15
+           }}
+           // onValueChange={(itemValue, itemIndex) =>
+           //   this.setState({language: itemValue})
+           //   }
+            >
+            <Picker.Item label="Sale" value="sale"/>
+            <Picker.Item label="Rent" value="rent" />
+            <Picker.Item label="borrowing" value="borrowing" />
+            </Picker>
           </View>
       </View>
 
@@ -152,6 +177,7 @@ export default function Post() {
         />
       </View>
       <Button title="teste" onPress={() => Alert.alert("teste", image)} />
+      </ScrollView>   
     </View>
   );
 }
@@ -159,7 +185,6 @@ export default function Post() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
     backgroundColor: "#e3dad0",
   },
   header: {
@@ -175,6 +200,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     margin: 10,
+    alignItems: "stretch",
   },
   avatar: {
     width: 48,
@@ -187,8 +213,9 @@ const styles = StyleSheet.create({
   },
   inputTitle: {
     color: "#344960",
-    fontSize: 10,
+    fontSize: 14,
     textTransform: "uppercase",
+    marginTop : 6
   },
   input: {
     borderBottomColor: "#8A8F9E",
@@ -196,5 +223,6 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 15,
     color: "#161F3D",
+    marginBottom: 6,
   },
 });
