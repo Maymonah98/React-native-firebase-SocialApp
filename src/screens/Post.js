@@ -159,12 +159,13 @@ export default function Post() {
       </View>
 
       <TouchableOpacity style={styles.avatar} onPress={() => pickImage()}>
-        <Ionicons name="md-camera" size={32}  />
+        <Ionicons name="md-camera" size={32} />
       </TouchableOpacity>
 
       <View
         style={{
-          marginHorizontal: 32,
+          borderWidth:.25,
+          marginHorizontal: 15,
           marginTop: 32,
           height: 300,
           width: "90%",
@@ -203,8 +204,8 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
   },
   avatar: {
-    width: 48,
-    height: 48,
+    alignItems:"center",
+    
     borderRadius: 24,
   },
   photo: {
