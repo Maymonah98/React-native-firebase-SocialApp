@@ -16,6 +16,7 @@ import getImage from "../utils/getImageAdorable";
 import * as firebase from "firebase";
 
 import Fire from "../components/Fire";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const data = Fire.shared.fakeData;
 
@@ -63,7 +64,11 @@ export default function Profile() {
         <View style={{flex:1}}>
         <Text style={styles.name}>{userName}</Text>
         <Text style={styles.name}>0555555</Text>
-        <Button title="sign out" onPress={() => Fire.shared.singOut()} />
+        <TouchableOpacity style={styles.button}  onPress={() => Fire.shared.singOut()}>
+          <Text style={{ color: "#FFF", fontWeight: "500", fontWeight: "bold" }}>
+              Sign out
+          </Text>
+        </TouchableOpacity>
         </View>
       </View>
 
@@ -88,6 +93,7 @@ export default function Profile() {
         </View>
       </View>
       <FlatList
+        numColumns={3}
         style={styles.containerPosts}
         data={data}
         renderItem={({ item }) => {
@@ -114,7 +120,7 @@ export default function Profile() {
                 alignItems: "center",
               }}
             >
-              <Text>How about posting some pictures ?</Text>
+              <Text style={{color: "#344960"}}>How about posting some pictures ?</Text>
             </View>
           );
         }}
@@ -125,7 +131,8 @@ export default function Profile() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, 
+    backgroundColor : "#e3dad0",
   },
   avatarContainer: {
     shadowColor: "#151734",
@@ -150,10 +157,20 @@ const styles = StyleSheet.create({
   },
 
   name: {
-    marginTop: 14,
+    marginTop: 10,
     paddingLeft: 20,
+    color:"#344960",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  button: {
+    marginLeft: 20,
+    marginTop: 7,
+    backgroundColor: "#344960",
+    borderRadius: 4,
+    height: 35,
+    alignItems: "center",
+    justifyContent: "center",
   },
   statusContainer: {
     flex: 1,
