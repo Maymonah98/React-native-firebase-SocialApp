@@ -72,7 +72,7 @@ export default function Register() {
         >
           <Ionicons name="ios-arrow-round-back" size={32} color="#FFF" />
         </TouchableOpacity>
-        <Text style={styles.greeting}>{`Hello !\nSign up to start`}</Text>
+        <Text style={styles.greeting}>{`مرحباً \n سجل حسابك للبدء`}</Text>
 
         <View style={styles.errorMessage}>
           {error && <Text style={styles.error}>{error}</Text>}
@@ -123,18 +123,18 @@ export default function Register() {
           {loading ? (
             <ActivityIndicator size="small" color="#FFF" />
           ) : (
-            <Text style={{ color: "#FFF", fontWeight: "500" }}>Enter</Text>
+            <Text style={{ color: "#FFF", fontWeight: "500" }}>تسجيل</Text>
           )}
         </TouchableOpacity>
 
         <TouchableOpacity style={{ alignSelf: "center", marginTop: 32 }}>
           <Text style={{ color: "#414959", fontSize: 13 }}>
-          Already have an account?{" "}
+          لديك حساب ؟  {" "}
             <Text
               onPress={() => navigation.navigate("login")}
               style={{ fontWeight: "500", color: "#d19677" }}
             >
-              Login
+              دخول
             </Text>
           </Text>
         </TouchableOpacity>

@@ -39,9 +39,7 @@ export default function Post() {
   }, []);
 
 
-  // state = {
-  //   language: 'java',
-  // };  
+ 
   async function getPhotoPermissions() {
     if (Constants.platform.android) {
       const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
@@ -98,7 +96,7 @@ export default function Post() {
           style={{ alignSelf: "center" }}
           onPress={() => handlePost()}
         >
-          <Text style={{ fontWeight: "bold", fontSize: 22,color:"#e3dad0" }}>Post</Text>
+          <Text style={{ fontWeight: "bold", fontSize: 22,color:"#e3dad0" }}>إضافة للعرض</Text>
         </TouchableOpacity>
       </View>
 
@@ -106,41 +104,41 @@ export default function Post() {
       <View style={styles.inputContainer}>
 
         <View>
-            <Text style={styles.inputTitle}>name of item</Text>
+            <Text style={styles.inputTitle}>اسم القطعة</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="none"
               autoFocus
-              placeholder="What is your item ?"
+              placeholder="الاسم"
               value={text}
               onChangeText={setText}
             />
           </View>
           <View>
-            <Text style={styles.inputTitle}>price</Text>
+            <Text style={styles.inputTitle}>السعر</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="none"
               autoFocus
-              placeholder="price of item"
+              placeholder="السعر"
               value={text}
               onChangeText={setText}
             />
           </View>
           <View>
-            <Text style={styles.inputTitle }>description</Text>
+            <Text style={styles.inputTitle }>الوصف</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="none"
               autoFocus
-              placeholder="describe your item"
+              placeholder="وصف القطعة"
               value={text}
               onChangeText={setText}
             />
           </View>
 
           <View>
-           <Text  style={styles.inputTitle} >Offered for</Text> 
+           <Text  style={styles.inputTitle} >عرضها ل.. </Text> 
            <Picker
             // selectedValue={this.state.language}
            style={{borderBottomWidth: StyleSheet.hairlineWidth,
@@ -151,9 +149,9 @@ export default function Post() {
            //   this.setState({language: itemValue})
            //   }
             >
-            <Picker.Item label="Sale" value="sale"/>
-            <Picker.Item label="Rent" value="rent" />
-            <Picker.Item label="borrowing" value="borrowing" />
+            <Picker.Item label="البيع" value="sale"/>
+            <Picker.Item label="تأجير" value="rent" />
+            <Picker.Item label="إعارة" value="borrowing" />
             </Picker>
           </View>
       </View>
@@ -216,7 +214,8 @@ const styles = StyleSheet.create({
     color: "#344960",
     fontSize: 14,
     textTransform: "uppercase",
-    marginTop : 6
+    marginTop : 6,
+    alignSelf:"flex-end",
   },
   input: {
     borderBottomColor: "#8A8F9E",
@@ -225,5 +224,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "#161F3D",
     marginBottom: 6,
+    direction:"rtl"
   },
 });

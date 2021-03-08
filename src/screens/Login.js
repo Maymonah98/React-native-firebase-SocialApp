@@ -50,7 +50,7 @@ export default function Login() {
 
         <Text
           style={styles.greeting}
-        >{`Welcome Again`}</Text>
+        >{`مرحباً بك`}</Text>
 
         <View style={styles.errorMessage}>
           {error && <Text style={styles.errorText}>{error}</Text>}
@@ -66,8 +66,8 @@ export default function Login() {
               onChangeText={setEmail}
             />
           </View> */}
-          <View>
-            <Text style={styles.inputTitle}>User Name</Text>
+          <View >
+            <Text style={styles.inputTitle}>اسم المستخدم أو البريد الإلكتروني</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="none"
@@ -77,7 +77,7 @@ export default function Login() {
           </View>
 
           <View style={{ marginTop: 32 }}>
-            <Text style={styles.inputTitle}>Password</Text>
+            <Text style={styles.inputTitle}>كلمة المرور</Text>
             <TextInput
               style={styles.input}
               secureTextEntry
@@ -95,20 +95,20 @@ export default function Login() {
             <Text
               style={{ color: "#FFF", fontWeight: "500", fontWeight: "bold" }}
             >
-              Enter
+              دخول
             </Text>
           )}
         </TouchableOpacity>
 
         <TouchableOpacity style={{ alignSelf: "center", marginTop: 32 }}>
           <Text style={{ color: "#414959", fontSize: 13 }}>
-            New here?{" "}
+            لا يوجد لديك حساب ؟{" "}
             <Text
               onPress={() => navigation.navigate("register")}
               style={{ fontWeight: "500", color: "#d19677" }}
             >
-              Register
-            </Text>
+              تسجيل
+            </Text> 
           </Text>
         </TouchableOpacity>
       </View>
@@ -166,6 +166,7 @@ const styles = StyleSheet.create({
     color: "#344960",
     fontSize: 10,
     textTransform: "uppercase",
+    alignSelf:"flex-end",
   },
   input: {
     borderBottomColor: "#8A8F9E",
@@ -173,6 +174,7 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 15,
     color: "#161F3D",
+
   },
   button: {
     marginHorizontal: 30,

@@ -66,7 +66,7 @@ export default function Profile() {
         <Text style={styles.name}>0555555</Text>
         <TouchableOpacity style={styles.button}  onPress={() => Fire.shared.singOut()}>
           <Text style={{ color: "#FFF", fontWeight: "500", fontWeight: "bold" }}>
-              Sign out
+              تسجيل الخروج
           </Text>
         </TouchableOpacity>
         </View>
@@ -77,19 +77,19 @@ export default function Profile() {
           <Text style={styles.statAmount}>
             {infos?.posts ? infos?.posts : 0}
           </Text>
-          <Text style={styles.statTitle}>posts</Text>
+          <Text style={styles.statTitle}>معروضة</Text>
         </View>
         <View style={styles.status}>
           <Text style={styles.statAmount}>
             {infos?.folloers ? infos?.folloers : 0}
           </Text>
-          <Text style={styles.statTitle}>followers</Text>
+          <Text style={styles.statTitle}>يتابعونك</Text>
         </View>
         <View style={styles.status}>
           <Text style={styles.statAmount}>
             {infos?.following ? infos?.folowing : 0}
           </Text>
-          <Text style={styles.statTitle}>following</Text>
+          <Text style={styles.statTitle}>تتابعهم</Text>
         </View>
       </View>
       <FlatList

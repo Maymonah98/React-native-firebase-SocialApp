@@ -11,10 +11,9 @@ export default function Notifications() {
         }}
         style={{ width: 200, height: 200 }}
       />
-      <Text style={styles.title}>No notifications for now :)</Text>
+      <Text style={styles.title}>لا يوجد تنبيهات</Text>
       <Text style={styles.sub}>
-      You will see your important notifications here
-      </Text>
+جميع التنبيهات المهمة سوف تظهر هنا      </Text>
     </View>
   );
 }

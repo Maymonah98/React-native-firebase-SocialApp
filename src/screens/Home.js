@@ -78,14 +78,14 @@ export default function Home() {
                   source={{ uri: item.avatar_url }}
                   style={styles.avatar}
                 />
-                <View style={{ flex: 1 }}>
+                <View style={{ flex: 1 ,direction:"rtl"}}>
                   <View
                     style={{
                       flexDirection: "row",
                       justifyContent: "space-between",
                       alignItems: "center",
                     }}
-                  >
+                   >
                     <View>
                       <Text style={styles.name}>{item.login}</Text>
                       <Text style={styles.timestamp}>{item.node_id}</Text>
@@ -100,12 +100,14 @@ export default function Home() {
                     style={styles.postImage}
                   />
                   <View style={{flexDirection: "row",justifyContent:"space-between"}}>
-                    <Text style={{fontSize:20,fontWeight:"600",color:"#344960"}}>Name of item </Text>
+                    <Text style={{fontSize:20,fontWeight:"600",color:"#344960"}}>اسم القطعه </Text>
                     <Text style={{fontSize:20,color:"#344960"}}>55 SAR</Text>
                   </View>
 
-                  <Text style={{color:"#344960"}}>for <Text style={{fontWeight:"bold",color:"grey"}}> Rent </Text></Text>
-                  <Text>Description</Text>
+
+                  
+                  <View style={{flexDirection:"row"}}><Text style={{color:"#344960"}}>معروضة ل.. <Text style={{fontWeight:"bold",color:"grey"}}> البيع </Text></Text></View>
+                  <View style={{flexDirection:"row"}}><Text>الوصف</Text></View>
 
 
                   <View style={{ flexDirection: "row" ,paddingTop:10}}>
@@ -176,7 +178,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     borderRadius: 5,
     padding: 8,
-    flexDirection: "row",
+    flexDirection: "row-reverse",
     marginVertical: 8,
     backgroundColor : "#e3dad0",
   },

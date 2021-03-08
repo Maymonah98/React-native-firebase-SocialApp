@@ -30,7 +30,7 @@ export default function Messages({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Header text="Messages" />
+      <Header text="الدردشات" />
 
       {true ? (
         <>
