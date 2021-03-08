@@ -10,7 +10,7 @@ import Loading from "./screens/Loading";
 import Register from "./screens/Register";
 import Post from "./screens/Post";
 import Contacts from "./screens/Contacts";
-
+import Messages from "./screens/Messages"
 import Message from "./components/MessageScreen";
 
 const firebaseConfig = require("./config/firebaseConfig");

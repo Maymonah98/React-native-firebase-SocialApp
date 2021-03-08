@@ -38,11 +38,10 @@ export default function Message({ navigation, route }) {
         behavior="padding"
         enabled={false}
       >
-        <Header
+        <Header style={styles.header}
           text={data.name}
-          color="#E9446A"
-          textColor="#FFF"
-          arrowColor="#FFF"
+          textColor="#B8BBc4"
+          arrowColor="#B8BBc4"
         />
         <GiftedChat
           placeholder="type here..."
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
   header: {
     width: "100%",
     height: 90,
-    backgroundColor: "#E9446A",
+    backgroundColor: "#344960",
     alignItems: "center",
     justifyContent: "center",
   },
