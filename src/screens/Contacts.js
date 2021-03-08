@@ -183,7 +183,7 @@ const screens = () => {
   const [users, setUsers] = useState(data);
 
   return (
-    <View>
+    <View style={styles.container}>
       <Header text="Contacts" />
       <FlatList
         data={users}
@@ -201,6 +201,7 @@ const screens = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor : "#e3dad0",
   },
   content: {
     width: "100%",

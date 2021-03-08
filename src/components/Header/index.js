@@ -6,9 +6,9 @@ import GoBack from "../goBackButton";
 export default function Header(props) {
   const {
     text = "teste",
-    color = "#FFF",
-    textColor = "#333",
-    arrowColor = "#333",
+    color = "#344960",
+    textColor = "#B8BBc4",
+    arrowColor = "#B8BBc4",
   } = props;
 
   return (
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   title: {
+    marginTop: 25,
     fontSize: 20,
     fontWeight: "bold",
     alignSelf: "center",

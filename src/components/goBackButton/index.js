@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     width: 35,
     height: 35,
     borderRadius: 35 / 2,
+    marginTop:25, 
   },
   pos: {
     position: "absolute",
