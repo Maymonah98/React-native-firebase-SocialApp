@@ -13,6 +13,7 @@ import {
   TouchableOpacity,
   LayoutAnimation,
 } from "react-native";
+import { Button, Text as NBText, Segment } from 'native-base'
 import * as firebase from "firebase";
 import Fire from "../components/Fire";
 
@@ -43,18 +44,35 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <View style={{ width: 35, height: 35 }} />
-        <Text style={styles.textHeader}>Feed</Text>
+         <View style={styles.contentHeader}>
+           <Segment  style={{ backgroundColor: '#344960',}}>
+             <Button first  style={styles.segmentButtons}
+              // active={filter === 'Todo'} 
+            //  onPress={() => this.setState({ filter: 'Todo' })}
+             >
+							<NBText style={{color:"#B8BBc4"}}>إعارة</NBText>
+						 </Button>
+             <Button style={styles.segmentButtons} >
+               <NBText style={{color:"#B8BBc4"}} >إيجار</NBText>
+               </Button>
+						 <Button style={styles.segmentButtons}  last
+							// active={filter === 'Complete'}
+							// onPress={() => this.setState({ filter: 'Complete' })}
+						 >
+							<NBText style={{color:"#B8BBc4"}} >بيع</NBText>
+						 </Button> 
+            </Segment>
+         </View>
         <TouchableOpacity
           style={{ height: 35, width: 35, borderRadius: 35 / 2 }}
-        >
+         >
           <Ionicons name="ios-person-add" size={26} color="#B8BBc4" />
         </TouchableOpacity>
       </View>
       {hidden ? (
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
+         >
           <Image
             style={{ width: 200, height: 200 }}
             source={{
@@ -151,12 +169,12 @@ const styles = StyleSheet.create({
   },
   header: {
     width: "100%",
-    paddingTop: 34,
-    paddingBottom: 16,
+    paddingTop: 36,
+    paddingBottom: 10,
     backgroundColor: "#344960",
-    flexDirection: "row",
+    flexDirection: "row-reverse",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: "#EBECF4",
     shadowColor: "#454D65",
@@ -209,4 +227,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginVertical: 16,
   },
+  segmentButtons:{
+    borderColor: "#B8BBc4",
+  },
+  contentHeader: {
+
+	},
 });
