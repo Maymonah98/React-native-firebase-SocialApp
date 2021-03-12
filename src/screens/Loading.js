@@ -16,7 +16,7 @@ export default function Loading() {
 
   return (
     <View style={styles.container}>
-      <Text>Wait a minute ...</Text>
+      <Text>انتظر للحظة ...</Text>
       <ActivityIndicator size="large" />
     </View>
   );

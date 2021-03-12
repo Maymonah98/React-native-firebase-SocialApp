@@ -1,20 +1,21 @@
-import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
 import * as firebase from "firebase";
+
 import {
-  View,
-  Text,
+  ActivityIndicator,
   Alert,
   Image,
-  StyleSheet,
   StatusBar,
+  StyleSheet,
+  Text,
   TextInput,
   TouchableOpacity,
-  ActivityIndicator,
+  View,
 } from "react-native";
+import React, { useState } from "react";
 
+import { Ionicons } from "@expo/vector-icons";
 import getAvatarUrl from "../utils/getImageAdorable";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -22,6 +23,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+	const [ phoneNumber, setPhoneNumber ] = useState();
 
   const navigation = useNavigation();
 
@@ -42,6 +44,8 @@ export default function Register() {
             following: 0,
             name: name,
             photoURL: avatarUrl,
+            email : email,
+						phoneNumber: phoneNumber
           })
           .then(() => {
             userCredentials.user.updateProfile({
@@ -79,7 +83,7 @@ export default function Register() {
         </View>
         <View style={styles.form}>
           <View>
-            <Text style={styles.inputTitle}>User Name</Text>
+            <Text style={styles.inputTitle}>اسم المستخدم</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="words"
@@ -89,7 +93,7 @@ export default function Register() {
           </View>
 
           <View style={{ marginTop: 32 }}>
-            <Text style={styles.inputTitle}>Email</Text>
+            <Text style={styles.inputTitle}>الايميل</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="none"
@@ -98,17 +102,18 @@ export default function Register() {
             />
           </View>
           <View style={{ marginTop: 32 }}>
-            <Text style={styles.inputTitle}>Mobile number</Text>
+            <Text style={styles.inputTitle}>رقم الجوال</Text>
             <TextInput
               style={styles.input}
               autoCapitalize="none"
-              value={email}
-              onChangeText={setEmail}
+              keyboardType={'number-pad'}
+              value={phoneNumber}
+              onChangeText={setPhoneNumber}
             />
           </View>
 
           <View style={{ marginTop: 32 }}>
-            <Text style={styles.inputTitle}>Password</Text>
+            <Text style={styles.inputTitle}>كلمة المرور</Text>
             <TextInput
               style={styles.input}
               secureTextEntry
@@ -155,6 +160,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     textAlign: "center",
+    zIndex: 5,
     color : "#b5846a",
   },
   errorMessage: {
@@ -177,6 +183,7 @@ const styles = StyleSheet.create({
     color: "#344960",
     fontSize: 10,
     textTransform: "uppercase",
+    alignSelf:"flex-end",
   },
   input: {
     borderBottomColor: "#8A8F9E",
