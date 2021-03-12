@@ -80,7 +80,7 @@ export default function Home() {
             }}
           />
           <Text style={{ fontSize: 20, fontWeight: "500", color: "#33333350" }}>
-          We have no post to show :(
+          لا يوجد محتوى لعرضه
           </Text>
         </View>
       ) : (
